@@ -1,0 +1,5 @@
+require './lib/generator'
+require './lib/parser'
+require 'pry'
+require 'minitest/autorun'
+require 'minitest/pride'
