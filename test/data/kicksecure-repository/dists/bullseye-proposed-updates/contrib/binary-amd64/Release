@@ -1,0 +1,5 @@
+Component: contrib
+Origin: whonix
+Label: Whonix
+Architecture: amd64
+Description: Kicksecure stable fixes testing APT Repository

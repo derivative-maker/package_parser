@@ -1,0 +1,5 @@
+Component: non-free
+Origin: whonix
+Label: Whonix
+Architecture: s390x
+Description: Kicksecure stable fixes testing APT Repository

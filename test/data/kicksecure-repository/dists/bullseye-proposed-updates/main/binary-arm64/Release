@@ -1,0 +1,5 @@
+Component: main
+Origin: whonix
+Label: Whonix
+Architecture: arm64
+Description: Kicksecure stable fixes testing APT Repository

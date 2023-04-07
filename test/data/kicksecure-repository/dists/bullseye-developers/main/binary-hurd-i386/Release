@@ -1,0 +1,5 @@
+Component: main
+Origin: whonix
+Label: Whonix
+Architecture: hurd-i386
+Description: Kicksecure Developers APT Repository

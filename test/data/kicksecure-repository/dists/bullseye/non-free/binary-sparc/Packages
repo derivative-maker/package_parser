@@ -1,0 +1,93 @@
+Package: dummy-nonfree
+Source: kicksecure-meta-packages
+Version: 3:25.8-1
+Architecture: all
+Maintainer: Patrick Schleizer <adrelanos@whonix.org>
+Installed-Size: 65
+Homepage: https://github.com/Kicksecure/kicksecure-meta-packages
+Priority: optional
+Section: non-free/metapackages
+Filename: pool/non-free/k/kicksecure-meta-packages/dummy-nonfree_25.8-1_all.deb
+Size: 59736
+SHA256: 0d80ea558cf97227e0630147826a80f403b160ce301384c6700ea13b7ff9dd6e
+SHA1: 82fc02f9af2000a320d7792225659177065ce3bc
+MD5sum: 64e132df73b6416566ecc7c368458038
+Description: dummy nonfree package
+ A metapackage, without contents to populate the nonfree repository.
+ .
+ This package itself is not nonfree.
+ This package itself is Free, Open, Freedom, Libre Software.
+ .
+ Useful for testing vrms without installation of an actual nonfree package.
+ .
+ Safe to remove.
+
+Package: firmware-nonfreedom
+Source: kicksecure-meta-packages
+Version: 3:25.8-1
+Architecture: all
+Maintainer: Patrick Schleizer <adrelanos@whonix.org>
+Installed-Size: 65
+Pre-Depends: legacy-dist
+Depends: firmware-amd-graphics, firmware-atheros, firmware-b43-installer, firmware-brcm80211, firmware-intel-sound, firmware-ipw2x00, firmware-iwlwifi, firmware-libertas, firmware-linux, firmware-linux-free, firmware-linux-nonfree, firmware-misc-nonfree, firmware-realtek, firmware-ti-connectivity, firmware-zd1211, intel-microcode, amd64-microcode
+Homepage: https://github.com/Kicksecure/kicksecure-meta-packages
+Priority: optional
+Section: non-free/metapackages
+Filename: pool/non-free/k/kicksecure-meta-packages/firmware-nonfreedom_25.8-1_all.deb
+Size: 59896
+SHA256: 6cdf32d20881f909d50f7fc9a2587b893b7a66395d5299eb8db504851b722105
+SHA1: 96be8055e163d148f7c0f66b915643f543e92575
+MD5sum: 1d0b49b69ec7ca315e091c820914aef2
+Description: Recommended packages for hosts with nonfreedom hardware design
+ A metapackage, which includes nonfree firmware useful for hosts with
+ nonfreedom hardware design.
+ .
+ These are not useful in Qubes, since this would be up to Qubes.
+ .
+ Safe to remove, if you know what you are doing.
+
+Package: virtualbox-guest-additions-iso
+Version: 6.1.38-1
+Architecture: all
+Maintainer: Debian Virtualbox Team <team+debian-virtualbox@tracker.debian.org>
+Installed-Size: 62413
+Recommends: virtualbox (>= 6.1.38)
+Conflicts: virtualbox-2.0, virtualbox-2.1, virtualbox-2.2, virtualbox-3.0, virtualbox-3.1, virtualbox-3.2, virtualbox-4.0, virtualbox-4.1, virtualbox-4.2, virtualbox-4.3, virtualbox-5.0, virtualbox-5.1, virtualbox-5.2, virtualbox-6.0
+Homepage: https://www.virtualbox.org
+Priority: optional
+Section: non-free/misc
+Filename: pool/non-free/v/virtualbox-guest-additions-iso/virtualbox-guest-additions-iso_6.1.38-1_all.deb
+Size: 47381132
+SHA256: 3b3f229c8de3ccaef47c0adb2319e8df2928869a29bcd1beb396405cf5ef9f54
+SHA1: cd998b89f5c078877c0f72315b6d7e59faf0ef5f
+MD5sum: 8260df881bc328754777b0f51f3d64dd
+Description: guest additions iso image for VirtualBox
+ VirtualBox is a free x86 virtualization solution allowing a wide range of
+ x86 operating systems such as Windows, DOS, BSD or Linux to run on a
+ Linux system.
+ .
+ This package provides an iso image which contains the guest additions
+ for Linux, Solaris and Windows to be installed on the host system. The guest
+ systems then can mount the iso and install the guest additions from there.
+
+Package: whonix-host-xfce-kvm-nonfreedom
+Source: anon-meta-packages
+Version: 3:23.0-1
+Architecture: all
+Maintainer: Patrick Schleizer <adrelanos@whonix.org>
+Installed-Size: 63
+Pre-Depends: legacy-dist
+Depends: whonix-host-xfce-kvm-freedom, firmware-nonfreedom
+Homepage: https://github.com/Whonix/anon-meta-packages
+Priority: optional
+Section: non-free/metapackages
+Filename: pool/non-free/a/anon-meta-packages/whonix-host-xfce-kvm-nonfreedom_23.0-1_all.deb
+Size: 57912
+SHA256: 3da23bcdaa5bc9981db55d4f9bccb7a297f7f9fed1ab7bc0f19eb3c4c6897f74
+SHA1: 774284974b287f744c9aadcde4bedc42ab32ca88
+MD5sum: 6bacfefbd3fa08ef48bbb17c81adfcb8
+Description: Whonix Host packages for nonfreedom hardware design
+ Designed to run on hardware with nonfreedom hardware design.
+ .
+ Do not remove.
+

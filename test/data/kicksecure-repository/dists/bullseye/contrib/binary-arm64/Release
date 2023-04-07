@@ -1,0 +1,5 @@
+Component: contrib
+Origin: whonix
+Label: Whonix
+Architecture: arm64
+Description: Kicksecure bullseye APT Repository

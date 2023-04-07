@@ -1,0 +1,5 @@
+Component: main
+Origin: whonix
+Label: Whonix
+Architecture: armel
+Description: Kicksecure Developers APT Repository

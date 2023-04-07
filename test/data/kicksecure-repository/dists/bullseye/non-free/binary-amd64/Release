@@ -1,0 +1,5 @@
+Component: non-free
+Origin: whonix
+Label: Whonix
+Architecture: amd64
+Description: Kicksecure bullseye APT Repository

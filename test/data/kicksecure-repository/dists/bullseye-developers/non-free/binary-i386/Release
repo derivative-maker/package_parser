@@ -1,0 +1,5 @@
+Component: non-free
+Origin: whonix
+Label: Whonix
+Architecture: i386
+Description: Kicksecure Developers APT Repository

@@ -1,0 +1,45 @@
+---
+layout: default
+title: <%= @pkg[:package] %>
+nav_order: <%= @order %>
+parent: <%= "#{@arch}" %>
+grand_parent: <%= "#{@dist} #{@suite}" %>
+---
+
+### <%= @pkg[:package] %>
+
+**Package:** <%= @pkg[:package] %>
+
+**Version:** <%= @pkg[:version] %>
+
+**Architecture:**  <%= @pkg[:architecture] %>
+
+**Maintainer:**  <%= @pkg[:maintainer] %>
+
+**Installed_size:**  <%= @pkg[:installed_size] %>
+
+**Recommends:**  <%= @pkg[:recommends] %>
+
+**Conficts:**  <%= @pkg[:conficts] %>
+
+**Replaces:**  <%= @pkg[:replaces] %>
+
+**Provides:**  <%= @pkg[:provides] %>
+
+**Homepage:**  [<%= @pkg[:homepage] %>](<%= @pkg[:homepage] %>)
+
+**Priority:**  <%= @pkg[:priority] %>
+
+**Section:** <%= @pkg[:section] %>
+
+**Filename:**  <%= @pkg[:filename] %>
+
+**Size:**  <%= @pkg[:size] %>
+
+**Sha256:**  <%= @pkg[:sha256] %>
+
+**Sha1:**  <%= @pkg[:sha1] %>
+
+**Md5sum:**  <%= @pkg[:md5sum] %>
+
+**Description:** <%= @pkg[:description] %>

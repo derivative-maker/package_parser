@@ -1,0 +1,5 @@
+Component: non-free
+Origin: whonix
+Label: Whonix
+Architecture: sparc
+Description: Kicksecure bullseye APT Repository

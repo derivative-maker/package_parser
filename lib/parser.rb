@@ -7,15 +7,22 @@ class Parser
     @distro_packages = {}
   end
 
+
+  def parse_packages
+    add_dists
+    add_packages
+    distro_packages
+  end
+
   def add_dists
     Dir.chdir("#{repo_dir}/dists")
     dists = Dir.glob('*').select {|file| File.directory? file}
     Dir.chdir(workdir)
     dists.each do |dist|
       @distro_packages[dist] = {
-        main: {},
-        non_free: {},
-        contrib: {}
+        "main": {},
+        "non-free": {},
+        "contrib": {}
       }
     end
   end
@@ -37,38 +44,37 @@ class Parser
 
     architectures.each do |arch|
       raw_packages = File.read("./#{arch}/Packages")
-      packages = raw_packages.split("Package: ").map do |package_data|
-        parse_package(package_data)
+      packages = raw_packages.split("Package: ").map do |pkg_data|
+        parse_package(pkg_data)
       end.compact
       @distro_packages[dist][suite][arch] = packages
     end
+    Dir.chdir(workdir)
   end
 
-  def parse_package(package_data)
-    return nil if package_data.empty?
-    binding.pry
+  def parse_package(pkg_data)
+    return nil if pkg_data.empty?
 
-    { 
-      package: package(package_data),
-      version: single_field(package_data, "Version"),
-      architecture: single_field(package_data, "Architecture"),
-      maintainer: single_field(package_data, "Maintainer"),
-      installed_size: single_field(package_data, "Installed-Size"),
-      recommends: single_field(package_data, "Recommends"),
-      conficts: single_field(package_data, "Conflicts"),
-      replaces: single_field(package_data, "Replaces"),
-      provides: single_field(package_data, "Provides"),
-      homepage: single_field(package_data, "Homepage"),
-      priority: single_field(package_data, "Priority"),
-      section: single_field(package_data, "Section"),
-      filename: single_field(package_data, "Filename"),
-      size: single_field(package_data, "Size"),
-      sha256: single_field(package_data, "SHA256"),
-      sha1: single_field(package_data, "SHA1"),
-      md5sum: single_field(package_data, "MD5sum"),
-      description: description(package_data)
+    {
+      package: package(pkg_data),
+      version: single_field(pkg_data, "Version"),
+      architecture: single_field(pkg_data, "Architecture"),
+      maintainer: single_field(pkg_data, "Maintainer"),
+      installed_size: single_field(pkg_data, "Installed-Size"),
+      recommends: single_field(pkg_data, "Recommends"),
+      conficts: single_field(pkg_data, "Conflicts"),
+      replaces: single_field(pkg_data, "Replaces"),
+      provides: single_field(pkg_data, "Provides"),
+      homepage: single_field(pkg_data, "Homepage"),
+      priority: single_field(pkg_data, "Priority"),
+      section: single_field(pkg_data, "Section"),
+      filename: single_field(pkg_data, "Filename"),
+      size: single_field(pkg_data, "Size"),
+      sha256: single_field(pkg_data, "SHA256"),
+      sha1: single_field(pkg_data, "SHA1"),
+      md5sum: single_field(pkg_data, "MD5sum"),
+      description: description(pkg_data)
     }
-    binding.pry 
   end
 
   def package(raw)
@@ -79,7 +85,7 @@ class Parser
     raw.match(/#{field}: .*\n/).to_s.chomp.gsub("#{field}: ", "")
   end
 
-  def description
-    binding.pry 
+  def description(pkg_data)
+    pkg_data.split("Description: ").last
   end
 end
