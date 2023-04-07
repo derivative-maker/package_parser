@@ -8,17 +8,14 @@ class GeneratorTest < Minitest::Test
   end
 
   def test_it_has_an_operating_system
-    skip
     assert_equal @kicksecure_md_generator.operating_system, 'kicksecure'
   end
 
   def test_it_has_packages
-    skip
     assert_instance_of Hash, @kicksecure_md_generator.packages
   end
 
   def test_it_clears_docs
-    skip
     @kicksecure_md_generator.clear_docs
     assert Dir.glob('./docs/*').empty?
   end
