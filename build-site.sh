@@ -23,7 +23,7 @@ build_site() {
   git pull origin main
   mkdir docs
   cp -r ../docs/ docs
-  bundle exec jekyll build
+  bundle exec jekyll build --incremental
   mv _site ../$OS-packages-site
   cd ../
   rm -rf $OS-packages/
