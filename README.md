@@ -10,7 +10,4 @@ In order for it to work, Ruby 3 must be installed. Also, you must have the packa
 
 #### Examples
 
-`$ ./build-site.sh whonix ~/whonix-repository`
-`$ ./build-site.sh kicksecure ~/kicksecure-repository`
-
-
+`$ ruby ./runner.rob whonix ~/whonix-repository`
