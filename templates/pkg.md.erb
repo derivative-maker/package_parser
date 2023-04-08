@@ -1,43 +1,54 @@
 ---
 layout: default
-title: <%= @pkg[:package] %>
+title: <%= pkg[:package] %>
 nav_order: <%= @order %>
-parent: <%= "#{@arch}" %>
-grand_parent: <%= "#{@dist} #{@suite}" %>
+parent: <%= @suite %>
+grand_parent: <%= @dist %>
 ---
 
-**Package:** <%= @pkg[:package] %>
+<% require 'pry'; binding.pry %>
+# <%= "#{@dist} #{@suite}" %> packages for <%= @architecture %>
+<% i = 1 %>
+<% @architecture.each do |pkg| %>
+  <%= "#{i}. [#{pkg[:package]}](##{pkg[:package]})" %>
+<%  end %>
 
-**Version:** <%= @pkg[:version] %>
+<% @architecture.each do |pkg| %>
+## <%= pkg[:package] %> 
 
-**Architecture:**  <%= @pkg[:architecture] %>
+**Package:** <%= pkg[:package] %>
 
-**Maintainer:**  <%= @pkg[:maintainer] %>
+**Version:** <%= pkg[:version] %>
 
-**Installed_size:**  <%= @pkg[:installed_size] %>
+**Architecture:**  <%= pkg[:architecture] %>
 
-**Recommends:**  <%= @pkg[:recommends] %>
+**Maintainer:**  <%= pkg[:maintainer] %>
 
-**Conficts:**  <%= @pkg[:conficts] %>
+**Installed_size:**  <%= pkg[:installed_size] %>
 
-**Replaces:**  <%= @pkg[:replaces] %>
+**Recommends:**  <%= pkg[:recommends] %>
 
-**Provides:**  <%= @pkg[:provides] %>
+**Conficts:**  <%= pkg[:conficts] %>
 
-**Homepage:**  [<%= @pkg[:homepage] %>](<%= @pkg[:homepage] %>)
+**Replaces:**  <%= pkg[:replaces] %>
 
-**Priority:**  <%= @pkg[:priority] %>
+**Provides:**  <%= pkg[:provides] %>
 
-**Section:** <%= @pkg[:section] %>
+**Homepage:**  [<%= pkg[:homepage] %>](<%= pkg[:homepage] %>)
 
-**Filename:**  <%= @pkg[:filename] %>
+**Priority:**  <%= pkg[:priority] %>
 
-**Size:**  <%= @pkg[:size] %>
+**Section:** <%= pkg[:section] %>
 
-**Sha256:**  <%= @pkg[:sha256] %>
+**Filename:**  <%= pkg[:filename] %>
 
-**Sha1:**  <%= @pkg[:sha1] %>
+**Size:**  <%= pkg[:size] %>
 
-**Md5sum:**  <%= @pkg[:md5sum] %>
+**Sha256:**  <%= pkg[:sha256] %>
 
-**Description:** <%= @pkg[:description] %>
+**Sha1:**  <%= pkg[:sha1] %>
+
+**Md5sum:**  <%= pkg[:md5sum] %>
+
+**Description:** <%= pkg[:description] %>
+<% end %>

@@ -17,7 +17,11 @@ class Generator
 
   def dist_markdown
     packages.each do |dist, suites|
+      increment_order
       @dist = dist
+      template = build_template('dist')
+      Dir.mkdir("./docs/#{@dist.downcase}")
+      File.write("./docs/#{@dist}.md", template)
       suite_markdown(suites)
     end
   end
@@ -26,9 +30,9 @@ class Generator
     suites.each do |suite, architectures|
       increment_order
       @suite = suite
-      template = build_template('dist-suite')
-      Dir.mkdir("./docs/#{@dist.downcase}-#{suite.downcase}")
-      File.write("./docs/#{@dist}-#{suite}.md", template)
+      template = build_template('suite')
+      Dir.mkdir("./docs/#{@dist.downcase}/#{suite.downcase}")
+      File.write("./docs/#{@dist}/#{suite}.md", template)
       arch_markdown(architectures)
     end
   end
@@ -37,19 +41,10 @@ class Generator
     architectures.each do |arch, packages|
       increment_order
       @arch = arch
+      @pkgs = packages
       template = build_template('arch')
-      Dir.mkdir("./docs/#{@dist.downcase}-#{@suite.downcase}/#{arch}")
-      File.write("./docs/#{@dist}-#{@suite}/#{arch}.md", template)
-      package_markdown(packages)
-    end
-  end
-
-  def package_markdown(packages)
-    increment_order
-    packages.each do |pkg|
-      @pkg = pkg
-      template = build_template('pkg')
-      File.write("./docs/#{@dist}-#{@suite}/#{@arch}/#{pkg[:package]}.md", template)
+      Dir.mkdir("./docs/#{@dist.downcase}/#{@suite.downcase}/#{arch}")
+      File.write("./docs/#{@dist}/#{@suite}/#{arch}.md", template)
     end
   end
 

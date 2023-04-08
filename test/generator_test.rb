@@ -32,8 +32,8 @@ class GeneratorTest < Minitest::Test
     arch = data[dist_key][suite_key][arch_key]
     pkg = data[dist_key][suite_key][arch_key].sample
 
-    dist_file = File.read("./docs/#{dist_key}-#{suite_key}.md")
-    arch_file = File.read("./docs/#{dist_key}-#{suite_key}/#{arch_key}.md")
-    pkg_file = File.read("./docs/#{dist_key}-#{suite_key}/#{arch_key}/#{pkg[:package]}.md")
+    assert File.read("./docs/#{dist_key}.md")
+    assert File.read("./docs/#{dist_key}/#{suite_key}.md")
+    assert File.read("./docs/#{dist_key}/#{suite_key}/#{arch_key}.md")
   end
 end

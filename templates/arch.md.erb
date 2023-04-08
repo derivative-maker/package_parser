@@ -2,8 +2,53 @@
 layout: default
 title: <%= @arch %>
 nav_order: <%= @order %>
-has_children: true
-parent: <%= "#{@dist} #{@suite}" %>
+parent: <%= @suite %>
+grand_parent: <%= @dist %>
 ---
 
-## <%= @arch %> Packages
+# <%= "#{@dist} #{@suite}" %> packages for <%= @arch %>
+<% i = 1 %>
+<% @pkgs.each do |pkg| %>
+  <%= "#{i}. [#{pkg[:package]}](##{pkg[:package]})" %>
+  <% i += 1 %>
+<%  end %>
+
+<% @pkgs.each do |pkg| %>
+## <%= pkg[:package] %> 
+
+**Package:** <%= pkg[:package] %>
+
+**Version:** <%= pkg[:version] %>
+
+**Architecture:**  <%= pkg[:architecture] %>
+
+**Maintainer:**  <%= pkg[:maintainer] %>
+
+**Installed_size:**  <%= pkg[:installed_size] %>
+
+**Recommends:**  <%= pkg[:recommends] %>
+
+**Conficts:**  <%= pkg[:conficts] %>
+
+**Replaces:**  <%= pkg[:replaces] %>
+
+**Provides:**  <%= pkg[:provides] %>
+
+**Homepage:**  [<%= pkg[:homepage] %>](<%= pkg[:homepage] %>)
+
+**Priority:**  <%= pkg[:priority] %>
+
+**Section:** <%= pkg[:section] %>
+
+**Filename:**  <%= pkg[:filename] %>
+
+**Size:**  <%= pkg[:size] %>
+
+**Sha256:**  <%= pkg[:sha256] %>
+
+**Sha1:**  <%= pkg[:sha1] %>
+
+**Md5sum:**  <%= pkg[:md5sum] %>
+
+**Description:** <%= pkg[:description] %>
+<% end %>
