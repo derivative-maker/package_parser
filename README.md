@@ -1,13 +1,25 @@
 # Description
 
-A simple script that uses Ruby to parse packages for Kicksecure and Whonix, and generates static HTML pages in the root of this repository. If you build a whonix site, the html will be found in `./whonix-packages-site`. Kicksecure will be found in `./kicksecure-packages-site`
+A simple application that uses Ruby to generate markdown data for Whonix and Kicksecure HTML packages sites. 
 
-In order for it to work, Ruby 3 must be installed. Also, you must have the package repository. To get the package repository,
+Markdown will be placed in `./docs`
+
+## Setup
+In order for it to work, Ruby 3 and Bundler must be installed. Also, you must have the respective kicksecure or whonix package repository. 
+
+1. Install Ruby as a non-root user. You can use rbenv, RVM, or asdf to do this. The repo author prefers rbenv.
+2. Run `$ gem install bundler`
+3. Download the packages repository
+
+```
+sudo apt install rsync
+rsync-ssl --recursive --delete --times --perms rsync://whonix.org/whonix/developer-meta-files/internal/ ../whonix-repository
+```
 
 ## Usage
 
-`$ ./build-site.sh <operating_system> <package_repository_path>`
 
-#### Examples
-
-`$ ruby ./runner.rob whonix ~/whonix-repository`
+```
+# ruby runner.rb <os_type> <repository_path>
+ruby runner.rb whonix ../whonix-repository
+```
