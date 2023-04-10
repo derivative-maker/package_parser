@@ -7,8 +7,7 @@ Markdown will be placed in `./docs`
 ## Setup
 In order for it to work, Ruby 3 and Bundler must be installed. Also, you must have the respective kicksecure or whonix package repository. 
 
-1. Install Ruby as a non-root user. You can use rbenv, RVM, or asdf to do this. The repo author prefers rbenv.
-2. Run `$ gem install bundler`
+1. Install Ruby. You can use apt-get, rbenv, RVM, or asdf to do this. The repo author prefers rbenv.
 3. Download the packages repository
 
 ```
