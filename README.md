@@ -40,7 +40,7 @@ From the root of this directory, ensure the following directory structure with `
 └── whonix-repository
 ```
 
-Cd back in to the directory the following command
+`cd` back in to the directory the following command
 
 ```
 ./build-site.sh <os_type> <desired_static_output_path>
