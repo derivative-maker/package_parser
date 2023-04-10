@@ -50,10 +50,10 @@ check_os_content() {
        echo "../$OS_TYPE-repository does not exist in the parent directory. See README for more info." >&2
        exit 1
     elif [ ! -d "../$OS_TYPE-packages" ]; then
-       echo "../$OS_TYPE-repository does not exist in the parent directory. See README for more info." >&2
+       echo "../$OS_TYPE-packages does not exist in the parent directory. See README for more info." >&2
        exit 1
     else
-      echo "OS dependencies installed"
+      echo "$OS_TYPE OS dependencies installed"
     fi
   elif [ "$OS_TYPE" == "kicksecure" ]; then
     if [ ! -d "../$OS_TYPE-repository" ]; then
@@ -63,7 +63,7 @@ check_os_content() {
        echo "../$OS_TYPE-packages does not exist in the parent directory. See README for more info." >&2
        exit 1
     else
-      echo "OS dependencies installed"
+      echo "$OS_TYPE OS dependencies installed"
     fi
   else
     echo "Invalid OS_TYPE supplied. Accepted options are 'whonix' or 'kicksecure'" >&2
