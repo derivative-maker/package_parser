@@ -18,9 +18,35 @@ rsync-ssl --recursive --delete --times --perms rsync://whonix.org/whonix/develop
 
 ## Usage
 
+#### Generating Package Markdown
+
 From the root of this repository:
 
 ```
 # ruby runner.rb <os_type> <repository_path>
 ruby runner.rb whonix ../whonix-repository
+```
+
+#### Generating an entire HTML site
+
+From the root of this directory, ensure the following directory structure with `tree -L 1 ..` 
+
+```
+./
+├── kicksecure-packages
+├── kicksecure-repository
+├── package_parser
+├── whonix-packages
+└── whonix-repository
+```
+
+Cd back in to the directory the following command
+
+```
+./build-site.sh <os_type> <desired_static_output_path>
+```
+
+example:
+```
+./build-site.sh whonix ../whonix-packages-html
 ```
