@@ -18,6 +18,7 @@ rsync-ssl --recursive --delete --times --perms rsync://whonix.org/whonix/develop
 
 ## Usage
 
+From the root of this repository:
 
 ```
 # ruby runner.rb <os_type> <repository_path>
