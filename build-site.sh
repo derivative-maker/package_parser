@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This script is for building and testing the site locally.
+
 OS_TYPE=$1
 OUTPUT_PATH=$2
 WORKDIR=$(pwd)
