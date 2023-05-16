@@ -34,7 +34,7 @@ ruby runner.rb whonix ../whonix-repository
 ```
 
 examples:
-``
+```
 ./publish-site.sh whonix ~/whonix-repository ../whonix-packages
 ./publish-site.sh kicksecure ../kicksecure-repository ../kicksecure-packages
 ```
