@@ -8,7 +8,7 @@ Markdown will be placed in `./docs`
 In order for it to work, Ruby 3 must be installed. Also, you must have the respective kicksecure or whonix package repository. 
 
 1. Install Ruby. You can use apt-get, rbenv, RVM, or asdf to do this. The repo author prefers rbenv.
-3. Download the packages repository
+2. Download the packages repository
 
 ```
 ruby --version # verify this is >= 3.0.0
@@ -27,26 +27,14 @@ From the root of this repository:
 ruby runner.rb whonix ../whonix-repository
 ```
 
-#### Generating an entire HTML site
-
-From the root of this directory, ensure the following directory structure with `tree -L 1 ..` 
+#### Publishing the HTML site
 
 ```
-./
-├── kicksecure-packages
-├── kicksecure-repository
-├── package_parser
-├── whonix-packages
-└── whonix-repository
+./publish-site.sh <os_type> <os_repository_path> <os_static_site_generator_repo>
 ```
 
-`cd` back in to the directory the following command
-
-```
-./build-site.sh <os_type> <desired_static_output_path>
-```
-
-example:
-```
-./build-site.sh whonix ../whonix-packages-html
+examples:
+``
+./publish-site.sh whonix ~/whonix-repository ../whonix-packages
+./publish-site.sh kicksecure ../kicksecure-repository ../kicksecure-packages
 ```
