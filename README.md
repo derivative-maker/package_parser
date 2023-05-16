@@ -16,7 +16,7 @@ sudo apt install rsync
 rsync-ssl --recursive --delete --times --perms rsync://whonix.org/whonix/developer-meta-files/internal/ ../whonix-repository
 ```
 
-## Usage
+## Development Usage
 
 #### Generating Package Markdown
 
@@ -27,7 +27,7 @@ From the root of this repository:
 ruby runner.rb whonix ../whonix-repository
 ```
 
-#### Publishing the HTML site
+## Publishing the HTML sites
 
 ```
 ./publish-site.sh <os_type> <os_repository_path> <os_static_site_generator_repo>
