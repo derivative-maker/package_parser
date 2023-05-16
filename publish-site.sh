@@ -5,6 +5,9 @@
 # ./publish-site.sh kicksecure ../kicksecure-repository ../kicksecure-packages
 # ----------------------------------------------------------------------------
 
+set -e
+set -o nounset
+
 OS_TYPE=$1
 REPOSITORY_PATH=$2
 GENERATOR_PATH=$3
