@@ -28,7 +28,7 @@ stage_changes() {
   git checkout main
   git reset --hard origin/main
   rm -rf ./docs/*
-  mv $PARSERDIR/docs/* ./docs
+  mv "$PARSERDIR/docs/"* ./docs
   changes=$(git status | grep -i 'nothing to commit') || true
 }
 
