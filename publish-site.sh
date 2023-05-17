@@ -18,10 +18,10 @@ main() {
   mv ./docs/* "$GENERATOR_PATH/docs"
   cd "$GENERATOR_PATH"
   git checkout main
-  changes=$(git status | grep -i 'nothing to commit')
+  changes=$(git status | grep -i 'nothing to commit') || true
   if [[ -z "$changes" ]]; then
     git add .
-    git commit -m "Update packages at $(date)"
+    git commit --no-gpg-sign -m "Update packages at $(date)"
     git push origin main
   else
     echo "No changes to commit"
