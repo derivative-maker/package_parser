@@ -8,15 +8,15 @@
 set -e
 set -o nounset
 
-OS_TYPE=$1
-REPOSITORY_PATH=$2
-GENERATOR_PATH=$3
+OS_TYPE="$1"
+REPOSITORY_PATH="$2"
+GENERATOR_PATH="$3"
 
 main() {
-  ruby runner.rb $OS_TYPE $REPOSITORY_PATH
-  rm -rf $GENERATOR_PATH/docs/*
-  mv ./docs/* $GENERATOR_PATH/docs
-  cd $GENERATOR_PATH
+  ruby runner.rb "$OS_TYPE" "$REPOSITORY_PATH"
+  rm -rf "$GENERATOR_PATH/docs/"*
+  mv ./docs/* "$GENERATOR_PATH/docs"
+  cd "$GENERATOR_PATH"
   git checkout main
   changes=$(git status | grep -i 'nothing to commit')
   if [[ -z "$changes" ]]; then
