@@ -1,11 +1,11 @@
 # Description
 
-A simple application that uses Ruby to generate markdown data for Whonix and Kicksecure HTML packages sites. 
+A simple application that uses Ruby to generate markdown data for Whonix and Kicksecure HTML packages sites.
 
 Markdown will be placed in `./docs`
 
 ## Setup
-In order for it to work, Ruby 3 must be installed. Also, you must have the respective kicksecure or whonix package repository. 
+In order for it to work, Ruby 3 must be installed. Also, you must have the respective kicksecure or whonix package repository.
 
 1. Install Ruby. You can use apt-get, rbenv, RVM, or asdf to do this. The repo author prefers rbenv.
 2. Download the packages repository
@@ -34,6 +34,7 @@ ruby runner.rb whonix ../whonix-repository
 ```
 
 examples:
+
 ```
 ./publish-site.sh whonix ~/whonix-repository ../whonix-packages
 ./publish-site.sh kicksecure ../kicksecure-repository ../kicksecure-packages
