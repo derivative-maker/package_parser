@@ -54,7 +54,7 @@ class Generator
 
   def build_template(type)
     template = File.read("./templates/#{type}.md.erb")
-    erb = ERB.new(template).result(binding)
+    ERB.new(template).result(binding)
   end
 
   def clear_docs

@@ -7,7 +7,7 @@ Markdown will be placed in `./docs`
 ## Setup
 In order for it to work, Ruby 3 must be installed. Also, you must have the respective kicksecure or whonix package repository.
 
-1. Install Ruby. You can use apt-get, rbenv, RVM, or asdf to do this. The repo author prefers rbenv.
+1. Install Ruby. You can use apt-get, rbenv, RVM, or asdf to do this. The repo author prefers asdf.
 2. Download the packages repository
 
 ```

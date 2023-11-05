@@ -1,19 +1,11 @@
----
-layout: default
-title: <%= @arch %>
-nav_order: <%= @order %>
-parent: <%= @suite %>
-grand_parent: <%= @dist %>
----
+### Moving forward
 
-# <%= "#{@dist} #{@suite}" %> packages for <%= @arch %>
-<% i = 1 %>
-<% @pkgs.each do |pkg| %>
-  <%= "#{i}. [#{pkg[:package]}](##{pkg[:package]})" %>
-  <% i += 1 %>
-<%  end %>
+dist object
+dist has some architectures
+dist creates Packages out of architectures
 
-<% @pkgs.each do |pkg| %>
+
+```
 ## <%= pkg[:package] %>
 
 **Package:** <%= pkg[:package] %>
@@ -51,4 +43,5 @@ grand_parent: <%= @dist %>
 **Md5sum:**  <%= pkg[:md5sum] %>
 
 **Description:** <%= pkg[:description] %>
-<% end %>
+
+```
